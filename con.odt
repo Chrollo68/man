@@ -1,0 +1,367 @@
+Practical No. 1
+
+a)Create an application that obtains four int values from the user and displays the product. 
+
+Code:
+
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Samruddhi TYIT");
+            Console.Write("Enter 1st Number: ");
+            int s1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter 2nd Number: ");
+            int s2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter 3rd Number: ");
+            int s3 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter 4th Number: ");
+            int s4 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Product is " + (s1 * s2 * s3 * s4));
+            Console.ReadKey();
+        }
+    }
+}
+
+Output:
+
+
+
+b)Create an application to demonstrate string operations. 
+
+Code:
+
+using System;
+using System.Linq;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            String s1 = "SAMRUDDHI";
+            String s2 = "INFORMATION";
+            String s3 = "TECHNOLOGY";
+            String s4 = "SRM College";
+            Console.WriteLine("Length of string Samruddhi : "+s1.Length);
+            Console.WriteLine("The position of letter A in Information is : " + s2.IndexOf("A"));
+            Console.WriteLine("Original String is : " + s1);
+            Console.WriteLine("String in Lower Case is : " + s1.ToLower());
+            Console.WriteLine("String "+s3+" starts with letter T : "+s3.StartsWith("T"));
+            Console.WriteLine("String "+s2+" ends with letter S : " + s2.EndsWith("S"));
+            Console.WriteLine("The strings "+s1+" & "+s2+" are Equal : " + s1.Equals(s2));
+            Console.WriteLine("The String "+s3+" contains LO in it : " + s3.Contains("LO"));
+            Console.WriteLine("Extracted portion of "+s2+" is : " + s2.Substring(2));
+        }
+    }
+}
+
+Output:
+c)Create an application that receives the (Student Id, Student Name, Course Name, Date of Birth) information from a set of students. The application should also display the information of all the students once the data entered. 
+
+Code:
+
+using System;
+
+namespace StudentManagement
+{
+    struct Students
+    {
+        int stud_id;
+        string stud_name;
+        string course_name;
+        DateTime stud_dob;
+        public void Input()
+        {
+            Console.Write("Enter Student ID:");
+            stud_id = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Student Name:");
+            stud_name = Console.ReadLine();
+            Console.Write("Enter Course Name:");
+            course_name = Console.ReadLine();
+            Console.Write("Enter Date of Birth (YYYY-MM-DD):");
+            stud_dob = DateTime.Parse(Console.ReadLine());
+        }
+        public void Display()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("Student Information:");
+            Console.WriteLine("ID: " + stud_id);
+            Console.WriteLine("Name: " + stud_name);
+            Console.WriteLine("Course: " + course_name);
+            Console.WriteLine("Date of Birth: " + stud_dob.ToShortDateString());
+        }
+    }
+    class Practicalc
+    {
+        static void Main()
+        {
+            Students[] stud_list = new Students[2];
+            for (int i = 0; i < stud_list.Length; i++)
+            {
+                Console.WriteLine($"Enter details for Student {i + 1}:");
+                stud_list[i].Input();
+            }
+            for (int i = 0; i < stud_list.Length; i++)
+            {
+                stud_list[i].Display();
+            }
+        }
+    }
+}
+Output:
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d)Create an application to demonstrate following operations 
+
+1)Generate Fibonacci series. 
+
+Code:
+using System;
+namespace Fibo
+{
+    public class Fibonacci
+    {
+         static void Main(string[] args)
+        {
+            int f = 0, s = 1, t, num;
+            Console.WriteLine("Samruddhi TYIT");
+            Console.Write("Enter the count of numbers : ");
+            num = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n");
+            Console.WriteLine("The generated Fibonacci Series is : ");
+            Console.Write(f + " " + s + " ");
+            for (int i = 2; i < num; i++)
+            {
+                t = f + s;
+                Console.Write(t + " ");
+                f = s;
+                s = t;
+            }
+        }
+    }
+}
+Output:
+
+ 
+
+
+
+
+
+
+2)Test for prime numbers. 
+
+Code:
+using System;
+namespace PrimeNum
+{
+    public class PrimeNumber
+    {
+         static void Main(string[] args)
+        {
+            int  flag=0,s = 2, num;
+            Console.WriteLine("Samruddhi TYIT");
+            Console.Write("Enter the number : ");
+            num = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n");
+            while(s<num/2)
+            {
+                if (num % s == 0)
+                {
+                    flag = 1;
+                    break;
+                }
+                s++;
+
+            }
+            if(flag==0)
+            {
+                Console.WriteLine(num + " is Prime number");
+            }
+            else
+            {
+                Console.WriteLine(num + " is not A Prime number");
+            }
+        }
+    }
+}
+
+Output:
+
+ 
+
+
+
+
+
+
+
+3)Test for Vowels
+
+Code:
+using System;
+namespace ConsoleApp4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Samruddhi TYIT");
+            String[] ary = { "a", "e", "i", "o", "u" };
+            int flag = 0;
+            Console.Write("Enter Letter here : ");
+            String str = Console.ReadLine();
+            for(int i=0;i<ary.Length;i++)
+            {
+                if (str.ToLower() == ary[i])
+                {
+                    flag = 1;
+                }
+            }
+            if(flag==1)
+            {
+                Console.WriteLine(str + " is A Vowel");
+            }
+            else
+            {
+                Console.WriteLine(str + " is A Consonant");
+            }
+        }
+    }
+}
+
+Output:
+
+ 
+
+
+
+
+
+4)Use of foreach loop with arrays 
+
+Code:
+
+using System;
+namespace ConsoleApp4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Samruddhi TYIT");
+            int[] ary= { 10, 20, 30, 40, 50 ,60,70};
+            foreach (int i in ary)
+            {
+                Console.WriteLine("The Square of " + i + " is : " + (i * i));
+            }
+        }
+    }
+}
+
+Output:
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5)Reverse a number and find sum of digits of a number. 
+
+Code:
+
+using System;
+
+namespace ConsoleApp4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num, rev = 0, rem, sum = 0;
+            Console.WriteLine("Samruddhi TYIT");
+            Console.Write("Enter Number here : ");
+            num = Convert.ToInt32(Console.ReadLine());
+            while(num!=0)
+            {
+                rem = num % 10;
+                sum = sum + rem;
+                rev = rev * 10 + rem;
+                num = num / 10;
+            }
+            Console.WriteLine("The Reversed Number is : "+rev);
+            Console.WriteLine("The Sum of Digits is : " + sum);
+        }
+    }
+}
+
+
+Output:
